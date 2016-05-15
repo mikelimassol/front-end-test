@@ -20,7 +20,7 @@
             templateUrl: '/components/directives/customer/customer.html',
             link: function(scope){
             	
-            	var millToTime = function(milliseconds){
+            	var setWaitingTimeVars = function(milliseconds){
            
             		var date = new Date(milliseconds);	
             	
@@ -38,7 +38,7 @@
             	};
             	
             	var setWaitingCustomersQueueTime = function(){
-            		millToTime(calcQueueTime(scope.customer.joinedTime));
+                        setWaitingTimeVars(calcQueueTime(scope.customer.joinedTime));
             	};
                         	
             	var setIsServedCustomer = function(){
@@ -47,7 +47,7 @@
             	
             	setIsServedCustomer();
             	setWaitingCustomersQueueTime();
-            	$interval(setWaitingCustomersQueueTime, 5000);
+            	$interval(setWaitingCustomersQueueTime, 1000);
             	
                 scope.remove = function(){
 	                queueService._removeCustomer(scope.customer.id).then(function(res){
