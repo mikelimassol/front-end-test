@@ -1,0 +1,45 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333; }
+
+h2 {
+  color: #ffffff; }
+
+.panel {
+  padding: 10px;
+  background-color: #999999;
+  width: 400px;
+  border: 1px solid #333;
+  margin: 10px auto; }
+  .panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .panel ul li {
+      padding: 0;
+      margin: 0; }
+  .panel input {
+    display: block;
+    padding: 10px 5px;
+    margin: 10px 0;
+    width: 250px; }
+  .panel select {
+    display: block;
+    width: 250px;
+    padding: 10px 13px 10px 5px; }
+  .panel button {
+    float: right;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: #ffffff; }
+  .panel .Customer {
+    margin: 10px 0;
+    padding: 5px; }
+    .panel .Customer span {
+      display: block;
+      background-color: white;
+      margin: 5px;
+      padding: 10px 5px; }
+
+.clear {
+  clear: both; }

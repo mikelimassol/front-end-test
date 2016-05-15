@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <title>Queue App</title>
     <script src="/bower_components/angularjs/angular.min.js"></script>
-    <script src="/QueueApp.js"></script>
-    <script src="/customer/Customer.js"></script>
-    <script src="/add-customer/AddCustomer.js"></script>
+    <script src="/js/all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body class="Queue" ng-app="qudini.QueueApp" ng-controller="QueueCtrl">
+<body class="Queue" ng-app="qudini.QueueApp" ng-controller="QueueController as queueCtrl">
 
-    <h2>Add Customer</h2>
-    <add-customer on-added="onCustomerAdded"></add-customer>
+    <div class="panel">
+        
+        <h2>Add Customer</h2>
+
+        <add-customer on-added="queueCtrl.onCustomerAdded"></add-customer>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="panel">
     <h2>Queueing Customers</h2>
     <ul class="Queue-customer-list">
-        <li ng-repeat="customerData in customers">
-            <customer customer="customerData" on-served="onCustomerServed" on-removed="onCustomerRemoved"></customer>
+        <li ng-repeat="customerData in queueCtrl.customers">
+            <customer customer="customerData" on-served="queueCtrl.onCustomerServed" on-removed="queueCtrl.onCustomerRemoved"></customer>
         </li>
     </ul>
-    <h2>Served customers</h2>
-    <ul class="Queue-customer-served-list">
-        <li ng-repeat="customerData in customersServed">
-            <customer customer="customerData" on-served="onCustomerServed" on-removed="onCustomerRemoved"></customer>
-        </li>
-    </ul>
+    </div>
+    
+    <div class="panel">
+        <h2>Served customers</h2>
+        <ul class="Queue-customer-served-list">
+            <li ng-repeat="customerData in queueCtrl.customersServed">
+                <customer customer="customerData" on-served="queueCtrl.onCustomerServed" on-removed="queueCtrl.onCustomerRemoved"></customer>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

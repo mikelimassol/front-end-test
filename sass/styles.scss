@@ -1,0 +1,78 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$button-background-color: #000000;
+$button-color: #ffffff;
+$h2-color: #ffffff;
+
+body {
+   font: 100% $font-stack;
+   color: $primary-color; 
+}
+
+h2 {
+    color:$h2-color;
+}
+.panel{
+    padding:10px;
+    background-color:#999999;
+    width:400px;
+    border: 1px solid #333;
+    margin:10px auto;
+    
+    ul{
+        list-style: none;
+        padding:0;
+        margin:0;
+        
+        li{
+            padding:0;
+            margin:0;
+        }
+    }
+  
+     input {
+        display:block;
+        padding:10px 5px;
+        margin:10px 0;
+        width:250px;
+    }
+    
+    select{
+        display:block;
+        width:250px;
+        padding:10px 13px 10px 5px;
+    }
+    
+    button{
+        float:right;
+        padding:5px 10px;
+        background-color:$button-background-color;
+        color:$button-color
+    }
+    
+    .Customer{
+        margin:10px 0;
+        padding:5px;
+        
+        span {
+            display:block;
+            background-color:white;
+            margin:5px;
+            padding:10px 5px;   
+        }
+        
+    }
+  
+}
+
+
+    
+   
+    
+
+    
+
+
+.clear{
+    clear:both;
+}

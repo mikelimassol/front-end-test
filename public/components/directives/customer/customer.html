@@ -1,0 +1,11 @@
+<div class="Customer">
+    <span>{{ customer.name }}</span>
+    <span>{{ customer.product.name }}</span>
+    <span ng-show="!isServed">{{days}} : days, {{hours}} : hours, {{minutes}} : minutes, {{seconds}} : seconds</span>
+    <span ng-show="isServed" >Served Time: {{customer.servedTime | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+    <div class="buttons">
+        <button ng-show="!isServed" ng-click="remove()">Remove</button>
+        <button ng-show="!isServed" ng-click="serve()">Served</button>
+    </div>
+    <div class="clear"></div>
+</div>

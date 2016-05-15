@@ -21,7 +21,9 @@ Feel free to implement features in your own way - but the general structure of t
 This is a json api
 
  - GET /api/customers - Returns a list of customers
+ 
  - GET /api/customers/served - Returns a list of customers served
+ 
  - POST /api/customer/add - Adds a customer
     - example param: {name: 'Roger Moore', product: {name: 'Gun repair'} }
 

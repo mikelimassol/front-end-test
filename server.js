@@ -7,9 +7,9 @@ var bodyParser = require('body-parser')
 
 
 var customers = [
-    {name: 'William Shakespeare', product: {name:'Grammatical advice'}, id: uuid.v4(), joinedTime: new Date().toString()},
-    {name: 'Sherlock Holmes', product: {name:'Magnifying glass repair'}, id: uuid.v4(), joinedTime: new Date().toString()},
-    {name: 'Allan Turing', product: {name:'Cryptography advice'}, id: uuid.v4(), joinedTime: new Date().toString()},
+    {name: 'William Shakespeare', product: {name:'Grammatical advice'}, id: uuid.v4(), joinedTime: new Date()},
+    {name: 'Sherlock Holmes', product: {name:'Magnifying glass repair'}, id: uuid.v4(), joinedTime: new Date()},
+    {name: 'Allan Turing', product: {name:'Cryptography advice'}, id: uuid.v4(), joinedTime: new Date()},
 ]
 
 var servedCustomers = [
@@ -20,6 +20,7 @@ function serveCustomer(id){
     customers = customers.filter(function(customer){
         if(customer.id == id){
             customer.status = 'served';
+            customer.servedTime = new Date();
             servedCustomers.push(customer);
             return false;
         }else{
@@ -30,6 +31,7 @@ function serveCustomer(id){
 
 function addCustomer(customer){
     customer.id = uuid.v4();
+    customer.joinedTime = new Date();
     customers.push(customer);
 }
 
